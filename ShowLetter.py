@@ -111,7 +111,7 @@ class ShowLetter(Frame):
         self.TestFoto = Label(self, image=self.fotopijl, bd=0, highlightthickness=0)
         self.TestFoto.place(x=500, y=150)
 
-        self.after(500, lambda: self.show_letter(1, self.counter1))
+        self.after(200, lambda: self.show_letter(1, self.counter1))
 
     def show_letter(self, test, counter):
         self.TestFoto.place_forget()  
@@ -121,13 +121,13 @@ class ShowLetter(Frame):
         self.TestFoto = Label(self, image=self.fototest, bd=0, highlightthickness=0)
         self.TestFoto.place(x=300, y=125)
 
-        self.after(200, self.hide_image)
+        self.after(500, self.hide_image)
 
     def peep(self, piepje):
         self.player.music.load(piepje) 
         self.player.music.play()
 
-        self.after(500, lambda: self.done())
+        self.after(200, lambda: self.done())
 
     def done(self):
         self.player.music.stop()
